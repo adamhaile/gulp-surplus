@@ -1,0 +1,16 @@
+{
+  "name": "gulp-htmlliterals",
+  "version": "0.0.1",
+  "description": "A Gulp plugin for doing htmlliterals preprocessing",
+  "main": "index.js",
+  "repository": "curveship/gulp-htmlliterals",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adam Haile (aah@curveship.org)",
+  "license": "MIT",
+  "dependencies": {
+    "gulp-util": "~3.0.4",
+    "through2": "~0.6.5"
+  }
+}

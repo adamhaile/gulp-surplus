@@ -1,17 +1,16 @@
-'use strict';
-var gutil = require('gulp-util');
-var through = require('through2');
-var htmlliterals = require('htmlliterals-preprocessor');
+var gutil = require('gulp-util'),
+	through = require('through2'),
+	preprocessor = require('surplus-preprocessor');
 
 module.exports = function (opts) {
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
 			cb(null, file);
 		} else if (file.isStream()) {
-			cb(new gutil.PluginError('gulp-htmlliterals', 'Streaming not supported'));
+			cb(new gutil.PluginError('gulp-surplus', 'Streaming not supported'));
 		} else {
     		try {
-    			var ret = htmlliterals.preprocess(file.contents.toString(), opts);
+    			var ret = preprocessor.preprocess(file.contents.toString(), opts);
 
     			if (ret) {
     				file.contents = new Buffer(ret);
@@ -19,9 +18,9 @@ module.exports = function (opts) {
 
     			this.push(file);
     		} catch (errs) {
-    			this.emit('error', new gutil.PluginError('gulp-htmlliterals', errs.join('\n'), {
+    			this.emit('error', new gutil.PluginError('gulp-surplus', errs, {
     				fileName: file.path,
-    				showStack: false
+    				showStack: true
     			}));
     		}
 

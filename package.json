@@ -1,16 +1,25 @@
 {
-  "name": "gulp-htmlliterals",
+  "name": "gulp-surplus",
   "version": "0.0.1",
-  "description": "A Gulp plugin for doing htmlliterals preprocessing",
+  "description": "A Gulp plugin for compiling Surplus JSX views",
+  "keywords": [
+    "gulp",
+    "surplus",
+    "jsx",
+    "preprocess",
+    "compile",
+    "s-js"
+  ],
   "main": "index.js",
-  "repository": "curveship/gulp-htmlliterals",
+  "repository": "adamhaile/gulp-surplus",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Adam Haile (aah@curveship.org)",
+  "author": "Adam Haile (adam.haile@gmail.com)",
   "license": "MIT",
   "dependencies": {
-    "gulp-util": "~3.0.4",
-    "through2": "~0.6.5"
+    "gulp-util": "^3.0.8",
+    "surplus-preprocessor": "^0.4.3",
+    "through2": "^2.0.3"
   }
 }

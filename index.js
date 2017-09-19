@@ -1,6 +1,6 @@
 var gutil = require('gulp-util'),
 	through = require('through2'),
-	preprocessor = require('surplus-preprocessor');
+	compiler = require('surplus/compiler');
 
 module.exports = function (opts) {
 	return through.obj(function (file, enc, cb) {
@@ -10,7 +10,7 @@ module.exports = function (opts) {
 			cb(new gutil.PluginError('gulp-surplus', 'Streaming not supported'));
 		} else {
     		try {
-    			var ret = preprocessor.preprocess(file.contents.toString(), opts);
+    			var ret = compiler.compile(file.contents.toString(), opts);
 
     			if (ret) {
     				file.contents = new Buffer(ret);

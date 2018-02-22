@@ -1,6 +1,6 @@
 {
   "name": "gulp-surplus",
-  "version": "0.5.0-beta1",
+  "version": "0.5.0",
   "description": "A Gulp plugin for compiling Surplus JSX views",
   "keywords": [
     "gulp",
@@ -18,7 +18,7 @@
   "author": "Adam Haile (adam.haile@gmail.com)",
   "license": "MIT",
   "peerDependencies": {
-    "surplus": "^0.5.0-beta1"
+    "surplus": "^0.5.0"
   },
   "dependencies": {
     "gulp-util": "^3.0.8",
